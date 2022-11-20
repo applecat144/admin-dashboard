@@ -1,13 +1,116 @@
 html {
-    box-sizing: border-box;
-  }
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    list-style: none;
-    text-decoration: none;
-  }
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: minmax(150px, 300px) minmax(800px, 4fr);
+  grid-template-rows: 1fr 5fr;
+  flex: 1;
+}
+
+.sidebar {
+  background-color: lightblue;
+  grid-row: 1 / span 2 ;
+  padding: 10px 0 10px 10px;
+}
+
+ul {
+  margin: 50px 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.header {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+}
+
+.header > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.header input{
+  flex: 1;
+}
+
+.header > :last-child > :first-child {
+  flex: 1;
+}
+
+.header ul {
+  display: flex;
+  margin: 0 0 0 100px;
+}
+
+.header li {
+  margin: 0 20px;
+}
+
+.content {
+  background-color: lightgray;
+  display: grid;
+  grid-template: 1fr 1fr / 2fr 1fr;
+  padding: 30px;
+  gap: 30px;
+}
+
+.content h1 {
+  grid-column: 1 / span 2;
+}
+
+.projects {
+  grid-row: 1 / span 2;
+  display: grid;
+  gap: 30px;
+  grid-template: auto repeat(3, 1fr) / 1fr 1fr;
+}
+
+.cards {
+  background-color: white;
+}
+
+.announcements,
+.trending {
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+  gap: 30px;
+}
+
+.announcements > div,
+.trending > div {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.announcements > div div,
+.trending > div div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
